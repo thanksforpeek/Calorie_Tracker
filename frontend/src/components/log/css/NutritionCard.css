@@ -1,0 +1,95 @@
+.calories-card, .macros-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.calories-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.calories-card p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #8a8a8e;
+}
+
+.calories-card h3 {
+    margin: 4px 0 0 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1c1c1e;
+}
+
+.macros-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.macro-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+}
+
+.macro-column p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8a8a8e;
+}
+
+.macro-column h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1c1c1e;
+}
+
+.calories-card progress, .macro-column progress {
+    display: block;
+    width: 100%;
+    height: 6px;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    margin-top: 4px;
+}
+
+.calories-card progress::-webkit-progress-bar,
+.macro-column progress::-webkit-progress-bar {
+    background-color: #e5e5ea;
+    border-radius: 4px;
+}
+
+.calories-card progress::-webkit-progress-value {
+    background-color: #007aff;
+    border-radius: 4px;
+}
+
+.macro-column progress::-webkit-progress-value {
+    border-radius: 4px;
+}
+
+.progress-carbs::-webkit-progress-value {
+    background-color: #00c7b1;
+}
+
+.progress-fat::-webkit-progress-value {
+    background-color: #8e44ad;
+}
+
+.progress-protein::-webkit-progress-value {
+    background-color: #ff9500;
+}

@@ -1,0 +1,85 @@
+.create-food-container {
+    background-color: var(--card-bg) !important;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.create-food-title {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary) !important;
+}
+
+.input-group input {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--text-primary) !important;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.15s ease-in-out;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-primary) !important;
+    background-color: var(--card-bg) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.macros-input-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.macros-input-row .input-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.macros-input-row .input-group input {
+    padding: 10px 8px;
+}
+
+.create-food-btn {
+    background-color: var(--accent-primary) !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.create-food-btn:hover {
+    background-color: var(--accent-hover) !important;
+}
+
+.create-food-btn:active {
+    transform: scale(0.98);
+}

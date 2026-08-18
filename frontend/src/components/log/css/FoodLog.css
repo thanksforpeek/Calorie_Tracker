@@ -1,0 +1,376 @@
+:root {
+    --accent-primary: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-danger: #ef4444;
+
+    --bg-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-primary: #1c1c1e;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --item-bg: #f8fafc;
+    --item-hover: #f1f5f9;
+    --input-bg: #f8fafc;
+
+    --selected-bg: #e0f2fe;
+    --selected-text: #0284c7;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --item-bg: #0f172a;
+    --item-hover: #1b273a;
+    --input-bg: #0f172a;
+
+    --selected-bg: #0284c7;
+    --selected-text: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.food-log-container {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 450px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.food-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background-color: var(--item-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+    gap: 16px;
+    min-width: 0;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.food-row:hover {
+    background-color: var(--item-hover) !important;
+    transform: translateY(-1px);
+}
+
+.food-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+}
+
+.food-name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.food-stats {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.action-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.grams-input {
+    width: 50px;
+    text-align: center;
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px;
+    padding: 6px 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary) !important;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.grams-input:focus {
+    border-color: var(--accent-primary) !important;
+}
+
+.grams-label {
+    font-size: 13px;
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+}
+
+.category-dropdown {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.category-dropdown:focus {
+    border-color: var(--accent-primary) !important;
+}
+
+.row-action-btn {
+    background-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.row-action-btn:hover {
+    background-color: var(--accent-primary) !important;
+    color: #ffffff !important;
+}
+
+.food-log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.food-log-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+}
+
+.add-custom-btn {
+    background-color: var(--accent-primary) !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.add-custom-btn:hover {
+    background-color: var(--accent-hover) !important;
+}
+
+.food-log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-secondary) !important;
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    color: var(--text-primary) !important;
+}
+
+.search-bar-container {
+    margin-bottom: 8px;
+}
+
+.food-search-input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 13px;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px;
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.15s ease-in-out;
+}
+
+.food-search-input:focus {
+    background-color: var(--card-bg) !important;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.no-foods-found {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-secondary) !important;
+    margin: 16px 0;
+}
+
+.diary-item-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: var(--accent-primary) !important;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+.edit-btn:hover {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary) !important;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+}
+
+.remove-btn:hover {
+    color: var(--accent-danger) !important;
+}
+
+.edit-mode-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edit-gram-input {
+    width: 55px;
+    padding: 4px 6px;
+    font-size: 13px;
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px;
+    outline: none;
+}
+
+.edit-gram-input:focus {
+    border-color: var(--accent-primary) !important;
+}
+
+.unit-label {
+    font-size: 13px;
+    color: var(--text-secondary) !important;
+}
+
+.save-btn {
+    background-color: var(--accent-primary) !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: var(--accent-hover) !important;
+}
+
+.cancel-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary) !important;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    color: var(--text-primary) !important;
+}

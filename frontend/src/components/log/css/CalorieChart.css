@@ -1,0 +1,58 @@
+.calorie-chart-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.chart-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1c1c1e;
+}
+
+.target-badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ef4444;
+    background-color: #fef2f2;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.chart-wrapper {
+    width: 100%;
+    margin-left: -15px;
+}
+
+.custom-tooltip {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip-day {
+    margin: 0;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.tooltip-calories {
+    margin: 2px 0 0 0;
+    font-size: 13px;
+    font-weight: 700;
+}

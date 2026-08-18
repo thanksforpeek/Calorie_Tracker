@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pydantic
+psycopg2-binary
+pydantic-ai
+bcrypt
+passlib[bcrypt]

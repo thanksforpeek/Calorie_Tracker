@@ -1,0 +1,25 @@
+.theme-toggle-btn {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle-btn:hover {
+    border-color: #3b82f6;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+    background-color: #0f172a;
+    color: #ffffff !important;
+    border-color: #334155;
+}

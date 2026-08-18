@@ -1,0 +1,249 @@
+:root {
+    --bg-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-primary: #1c1c1e;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --item-bg: #f8fafc;
+    --item-hover: #f1f5f9;
+    --input-bg: #f8fafc;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --item-bg: #0f172a;
+    --item-hover: #1b273a;
+    --input-bg: #0f172a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.home {
+    background-color: var(--bg-color);
+    max-width: 1280px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 40px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+}
+
+.left-side {
+    flex: 1.4;
+}
+
+.right-side {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logout-btn {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.logout-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.food-diary-container,
+.calorie-chart-card,
+.food-log-container,
+.calendar-card,
+.nutrition-card,
+.nutrition-card > div {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.diary-title,
+.category-title,
+.diary-item-name,
+.food-name {
+    color: var(--text-primary) !important;
+}
+
+.diary-item-details,
+.empty-category-text,
+.unit-label {
+    color: var(--text-secondary) !important;
+}
+
+.diary-item-row,
+.food-row-container {
+    background-color: var(--item-bg) !important;
+    border: 1px solid var(--border-color);
+}
+
+.diary-item-row:hover,
+.food-row-container:hover {
+    background-color: var(--item-hover) !important;
+}
+
+.food-search-input,
+.edit-gram-input,
+select,
+input[type="number"],
+input[type="text"] {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+    fill: var(--text-secondary) !important;
+}
+
+.nutrition-card,
+.nutrition-card *,
+.calories-card,
+.macros-card,
+.macro-item {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+.nutrition-card p,
+.nutrition-card span,
+.macro-label,
+.left-calories-text {
+    color: var(--text-secondary) !important;
+}
+
+.food-log-list,
+.food-row-container,
+.food-item-card,
+.food-row {
+    background-color: var(--item-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.food-row-container *,
+.food-row * {
+    color: var(--text-primary) !important;
+}
+
+.food-row-details,
+.food-row-subtext {
+    color: var(--text-secondary) !important;
+}
+
+.calendar-card,
+.calendar-day-btn,
+.week-calendar {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+.calendar-day-btn:not(.active) .day-name,
+.calendar-day-btn:not(.active) .day-number,
+.calendar-day-btn:not(.selected) * {
+    color: var(--text-primary) !important;
+}
+
+.calendar-card,
+.week-calendar,
+.week-calendar-container {
+    background-color: var(--card-bg) !important;
+}
+
+[data-theme="dark"] .calendar-card *,
+[data-theme="dark"] .week-calendar *,
+[data-theme="dark"] .week-calendar-container * {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .calendar-card span,
+[data-theme="dark"] .calendar-day-name,
+[data-theme="dark"] .day-name {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .calendar-day-btn.active,
+[data-theme="dark"] .calendar-day-btn.selected,
+[data-theme="dark"] .active-day,
+[data-theme="dark"] .selected-day {
+    background-color: #e0f2fe !important;
+}
+
+[data-theme="dark"] .calendar-day-btn.active *,
+[data-theme="dark"] .calendar-day-btn.selected *,
+[data-theme="dark"] .active-day *,
+[data-theme="dark"] .selected-day * {
+    color: #0284c7 !important;
+}
+
+.modal-content,
+.modal-container,
+.create-food-container,
+.create-food-card {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color);
+}
+
+.modal-content h2,
+.modal-content h3,
+.modal-content h4,
+.modal-content label,
+.create-food-container h3,
+.create-food-container label {
+    color: var(--text-primary) !important;
+}
+
+.modal-close-btn {
+    color: var(--text-secondary) !important;
+}
+
+.modal-close-btn:hover {
+    color: var(--text-primary) !important;
+}
+
+.modal-content input,
+.create-food-container input {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.modal-content input::placeholder,
+.create-food-container input::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+}

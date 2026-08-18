@@ -1,0 +1,162 @@
+.food-diary-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.diary-title {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1c1c1e;
+}
+
+.diary-category-section {
+    margin-bottom: 20px;
+}
+
+.category-title {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+}
+
+.category-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.diary-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    transition: background-color 0.15s ease;
+}
+
+.diary-item-row:hover {
+    background-color: #f1f5f9;
+}
+
+.diary-item-name {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.diary-item-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.diary-item-details {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.edit-btn {
+    background: transparent;
+    border: none;
+    color: #3b82f6;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.edit-btn:hover {
+    background-color: #eff6ff;
+}
+
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.remove-btn:hover {
+    color: #ef4444;
+    background-color: #fee2e2;
+}
+
+.edit-mode-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edit-gram-input {
+    width: 60px;
+    padding: 4px 8px;
+    font-size: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.edit-gram-input:focus {
+    border-color: #3b82f6;
+}
+
+.unit-label {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.save-btn {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.save-btn:hover {
+    background-color: #2563eb;
+}
+
+.cancel-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 14px;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    color: #0f172a;
+}
+
+.empty-category-text {
+    margin: 0;
+    font-size: 13px;
+    color: #94a3b8;
+    font-style: italic;
+    padding: 4px 6px;
+}
