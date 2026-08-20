@@ -40,7 +40,7 @@ services:
     image: ${AWS_ECR_REGISTRY}/calorie-tracker-frontend:latest
     restart: always
     ports:
-      - "5173:5173"
+      - "80:5173"
     environment:
       - VITE_API_URL=${VITE_LINK}
     depends_on:
