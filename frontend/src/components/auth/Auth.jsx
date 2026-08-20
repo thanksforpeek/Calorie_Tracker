@@ -16,7 +16,6 @@ function Auth({ onLoginSuccess }) {
         const endpoint = isRegister ? "/api/auth/register" : "/api/auth/login";
 
         try {
-            console.log("ОТПРАВКА НА:", API_BASE_URL);
             const response = await fetch(`${API_BASE_URL}${endpoint}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
