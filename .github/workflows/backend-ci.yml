@@ -25,5 +25,7 @@ jobs:
           pip install pytest pytest-asyncio httpx
 
       - name: Run Pytest
+        env:
+          GOOGLE_API_KEY: "dummy_test_key"
         working-directory: ./backend
         run: python -m pytest -v
