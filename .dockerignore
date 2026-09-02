@@ -1,37 +1,50 @@
 .venv/
+venv/
+env/
+ENV/
 __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
+*.sqlite3
 
 .env
 .env.*
+!.env.example
 
 .git/
 .gitignore
+.dockerignore
 .idea/
 .vscode/
 .DS_Store
+Thumbs.db
 
-*.log
-*.tmp
-
-node_modules
-dist
-build
-.vite
+node_modules/
+dist/
+build/
+.vite/
 .eslintcache
-
-!.env.example
-
-.git
-.gitignore
-.idea
-.vscode
-.DS_Store
 
 *.log
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+dump.sql
+*.sql
 
+terraform/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+lambda_build/
+lambda_summary_build/
+*.zip

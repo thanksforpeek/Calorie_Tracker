@@ -198,7 +198,7 @@ function HomePage() {
     useEffect(() => {
         if (!user) return;
 
-        fetch(`${API_BASE_URL}/api/food-logs/weekly-summary?user_id=${user.id}&start_date=2026-08-17`)
+        fetch(`${API_BASE_URL}/api/food-logs/weekly-summary?user_id=${user.id}&start_date=2026-08-31`)
             .then((res) => res.json())
             .then((data) => setWeeklySummary(data))
             .catch((err) => console.error(err));

@@ -55,3 +55,7 @@ override.tf.json
 *_override.tf.json
 
 .terraform.lock.hcl
+
+lambda_build/
+lambda_summary_build/
+*.zip
