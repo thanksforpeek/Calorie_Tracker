@@ -11,8 +11,6 @@ router = APIRouter(
     tags=["Food-log"]
 )
 
-SUMMARY_LAMBDA_URL = os.getenv("SUMMARY_LAMBDA_URL")
-
 @router.get("/", response_model=List[schemas.FoodLogReadResponse])
 def get_all_food_logs(user_id: int, date: Optional[date] = None):
     if not date:
@@ -39,6 +37,13 @@ def get_all_food_logs(user_id: int, date: Optional[date] = None):
 
 @router.get("/weekly-summary")
 def get_weekly_summary(user_id: int, start_date: str):
+    summary_url = os.getenv("SUMMARY_LAMBDA_URL")
+    if not summary_url:
+        raise HTTPException(
+            status_code=500,
+            detail="SUMMARY_LAMBDA_URL is not set in environment"
+        )
+
     try:
         start = datetime.strptime(start_date, "%Y-%m-%d").date()
     except ValueError:
@@ -73,7 +78,7 @@ def get_weekly_summary(user_id: int, start_date: str):
     with httpx.Client(timeout=10.0) as client:
         try:
             res = client.post(
-                SUMMARY_LAMBDA_URL,
+                summary_url,
                 json={"start_date": start_date, "rows": result}
             )
             res.raise_for_status()
