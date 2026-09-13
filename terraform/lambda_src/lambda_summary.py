@@ -1,9 +1,19 @@
 import json
+import os
+import boto3
 from datetime import datetime, timedelta
+
+sns = boto3.client("sns", region_name=os.getenv("AWS_REGION", "eu-north-1"))
+SNS_TOPIC_ARN = os.getenv("SNS_TOPIC_ARN")
+
 
 def handler(event, context):
     try:
-        body_raw = event.get("body", {})
+        if "Records" in event and len(event["Records"]) > 0:
+            body_raw = event["Records"][0].get("body", {})
+        else:
+            body_raw = event.get("body", {})
+
         if isinstance(body_raw, str):
             body = json.loads(body_raw)
         elif isinstance(body_raw, dict):
@@ -15,10 +25,7 @@ def handler(event, context):
         start_date_str = body.get("start_date")
 
         if not start_date_str:
-            return {
-                "statusCode": 400,
-                "body": json.dumps({"error": "Missing 'start_date'"})
-            }
+            raise ValueError("Missing required parameter: 'start_date'")
 
         start = datetime.strptime(start_date_str, "%Y-%m-%d").date()
 
@@ -49,7 +56,15 @@ def handler(event, context):
         }
 
     except Exception as e:
-        return {
-            "statusCode": 500,
-            "body": json.dumps({"error": str(e)})
-        }
+        error_message = f"Calorie Tracker Lambda Error!\n\nError details: {str(e)}\n\nIncoming event:\n{json.dumps(event, indent=2)}"
+
+        try:
+            sns.publish(
+                TopicArn=SNS_TOPIC_ARN,
+                Subject="Alert: Calorie Tracker Lambda Failure",
+                Message=error_message
+            )
+        except Exception as sns_err:
+            print(f"Failed to send SNS alert: {str(sns_err)}")
+
+        raise e

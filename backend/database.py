@@ -6,17 +6,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DB_CONFIG = {
-    "dbname": os.getenv("POSTGRES_DB"),
-    "user": os.getenv("POSTGRES_USER"),
-    "password": os.getenv("POSTGRES_PASSWORD"),
-    "host": os.getenv("POSTGRES_HOST"),
-    "port": os.getenv("POSTGRES_PORT", "5432")
-}
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 @contextmanager
 def get_db_cursor():
-    conn = psycopg2.connect(**DB_CONFIG)
+    conn = psycopg2.connect(DATABASE_URL)
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
         yield cursor
