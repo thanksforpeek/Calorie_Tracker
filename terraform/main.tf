@@ -54,6 +54,13 @@ resource "aws_security_group" "app_sg" {
   }
 
   ingress {
+    from_port   = 5173
+    to_port     = 5173
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     from_port   = 8000
     to_port     = 8000
     protocol    = "tcp"
@@ -153,7 +160,7 @@ resource "aws_lambda_function" "ai_service" {
   role             = aws_iam_role.iam_role.arn
   handler          = "ai_handler.handler"
   runtime          = "python3.11"
-  timeout          = 30
+  timeout          = 60
 
   s3_bucket        = aws_s3_object.lambda_zip.bucket
   s3_key           = aws_s3_object.lambda_zip.key

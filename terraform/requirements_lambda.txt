@@ -2,3 +2,4 @@ google-genai
 pydantic-ai-slim[google]
 python-dotenv
 psycopg2-binary
+boto3
